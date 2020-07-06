@@ -1,13 +1,6 @@
 <%- include ('../partials/header') %>
 
-<ol> 
-    <% top50.map(song => { %>
-    <li>
-        <%=`${song.rank}${song.title}` %>
-    </li>    
-        <%  }) %>
-
-</ol>
+<%- include ('../partials/song') %>
 
 <%- include ('../partials/footer') %>
 
