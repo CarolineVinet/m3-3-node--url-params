@@ -18,6 +18,7 @@ app.set("view engine", "ejs");
 app.get("/top50", (req, res) => {
   res.render("pages/top50", {
     title: "Top 50 Songs Streamed on Spotify",
+    top50,
   });
 });
 
