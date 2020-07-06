@@ -1,7 +1,11 @@
 <ol> 
     <% top50.map(song => { %>
-    <li>
-        <%=`#${song.rank} (${song.streams} streams) ${song.title} ${song.artist} ${song.publicationDate}` %>
+    <li class='line'>
+       <span class='rank'><%=`#${song.rank}`%> </span>
+       <span class= 'streams'><%= `(${song.streams} streams)`%></span>
+       <span class='title'><%=`${song.title}`%></span>
+       <span class="artist"><%=`by ${song.artist}`%></span>
+       <span class='date'><%=`publication date: ${song.publicationDate}` %></span>
     </li>    
         <%  }) %>
 
