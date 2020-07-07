@@ -24,12 +24,18 @@ app.get("/top50", (req, res) => {
 
 app.get("/top50/song/:id", (req, res) => {
   const songId = req.params.id;
-  // get the song object from the array
-  // render singlesong... pass it{ song: songObj}
-  res.render("pages/singlesong", {
-    title: "Top 50 Songs Streamed on Spotify",
-    song: top50[songId - 1],
-  });
+  if (songId <= 50) {
+    res.render("pages/singlesong", {
+      title: "Top 50 Songs Streamed on Spotify",
+      song: top50[songId - 1],
+    });
+  } else {
+    res.status(404);
+    res.render("pages/fourOhFour", {
+      title: "I got nothing",
+      path: req.originalUrl,
+    });
+  }
 });
 
 // handle 404s
