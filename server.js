@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8000;
 
 const app = express();
 
-app.use(morgan("dev"));
+const { songList } = app.use(morgan("dev"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
@@ -19,6 +19,16 @@ app.get("/top50", (req, res) => {
   res.render("pages/top50", {
     title: "Top 50 Songs Streamed on Spotify",
     top50,
+  });
+});
+
+app.get("/top50/song/:id", (req, res) => {
+  const songId = req.params.id;
+  // get the song object from the array
+  // render singlesong... pass it{ song: songObj}
+  res.render("pages/singlesong", {
+    title: "Top 50 Songs Streamed on Spotify",
+    song: top50[songId - 1],
   });
 });
 

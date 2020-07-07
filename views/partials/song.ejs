@@ -3,7 +3,7 @@
     <li class='line'>
        <span class='rank'><%=`#${song.rank}`%> </span>
        <span class= 'streams'><%= `(${song.streams} streams)`%></span>
-       <span class='title'><%=`${song.title}`%></span>
+       <span class='title' onclick={fetchSingleSongPage(song.rank)}><%=`${song.title}`%></span>
        <span class="artist"><%=`by ${song.artist}`%></span>
        <span class='date'><%=`publication date: ${song.publicationDate}` %></span>
     </li>    
