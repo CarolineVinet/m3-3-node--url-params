@@ -6,6 +6,8 @@
     <span class='title'><%=`${song.title}`%></span>
     <span class="artist"><%=`by ${song.artist}`%></span>
     <span class='date'><%=`publication date: ${song.publicationDate}` %></span>
+    <a href="/top50/song/<%=song.rank -1 %>">Previous</a>
+    <a href="/top50/song/<%=song.rank +1 %>">Next</a>
 </div>
 
 <%- include ('../partials/footer') %>
